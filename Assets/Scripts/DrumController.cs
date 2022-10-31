@@ -57,7 +57,6 @@ public class DrumController
                 if (_hit.transform.GetComponent<Crash>())
                 {
                     _audioSource.PlayOneShot(_drumsSoundsView.CrashSound);
-                    Debug.Log("12");
                 }
 
             }
@@ -66,6 +65,6 @@ public class DrumController
 
     private void PlaySound(AudioClip audioClip)
     {
-        _audioSource.PlayOneShot(au);
+        
     }
 }
