@@ -1,8 +1,6 @@
-using UnityEngine;
 
-public class HighHat : MonoBehaviour
+
+public class HighHat : Drum
 {
-    private AudioClip _highHatSound;
-
-    public AudioClip HighHatSound => _highHatSound; 
+   
 }

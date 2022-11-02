@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DrumsSoundsView : MonoBehaviour
+public class DrumsSoundsLibrary : MonoBehaviour
 {
     [SerializeField]
     private AudioClip _snareDrumSound;

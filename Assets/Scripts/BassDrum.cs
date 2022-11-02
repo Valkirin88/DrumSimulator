@@ -1,6 +1,6 @@
-using UnityEngine;
 
-public class BassDrum : MonoBehaviour
+
+public class BassDrum : Drum
 {
    
 }

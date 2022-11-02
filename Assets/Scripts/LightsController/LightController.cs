@@ -1,15 +1,16 @@
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
-public class DrumController
+public class LightController 
 {
+    private LightsSet _lightsSet;
     private RaycastHit _hit;
-    private AudioSource _audioSource;
-    private DrumsSoundsLibrary _drumsSoundsLibrary;
+    private int _timeDelay = 200;
 
-    public DrumController(DrumsSoundsLibrary drumsSoundsLibrary, AudioSource audioSource)
+    public LightController(LightsSet lightsSet)
     {
-        _drumsSoundsLibrary = drumsSoundsLibrary;
-        _audioSource = audioSource;
+        _lightsSet = lightsSet;
     }
 
     public void Update()
@@ -30,47 +31,54 @@ public class DrumController
 
     private void ChooseDrum(Drum drum)
     {
-            switch (drum)
-            {
+        switch (drum)
+        {
             case SnareDrum:
-                PlaySound(_drumsSoundsLibrary.SnareDrumSound);
+                LightFlash(_lightsSet.SnareDrumLight);
                 break;
 
             case HighHat:
-                PlaySound(_drumsSoundsLibrary.HighHatSound);
+                LightFlash(_lightsSet.HighHatLight);
                 break;
 
             case Crash:
-                PlaySound(_drumsSoundsLibrary.CrashSound);
+                LightFlash(_lightsSet.CrashLight);
                 break;
 
             case BassDrum:
-                PlaySound(_drumsSoundsLibrary.BassDrumSound);
+                LightFlash(_lightsSet.BassDrumLight);
                 break;
 
             case Ride:
-                PlaySound(_drumsSoundsLibrary.RideSound);
+                LightFlash(_lightsSet.RideLight);
                 break;
 
             case Tom1:
-                PlaySound(_drumsSoundsLibrary.Tom1Sound);
+                LightFlash(_lightsSet.Tom1Light);
                 break;
 
             case Tom2:
-                PlaySound(_drumsSoundsLibrary.Tom2Sound);
+                LightFlash(_lightsSet.Tom2Light);
                 break;
 
             case Tom3:
-                PlaySound(_drumsSoundsLibrary.Tom3Sound);
+                LightFlash(_lightsSet.Tom3Light);
                 break;
 
             default:
                 break;
-            }
-    } 
-        
-    private void PlaySound(AudioClip audioClip)
+        }
+    }
+
+    private void LightFlash(Light light)
     {
-        _audioSource.PlayOneShot(audioClip);
+        light.enabled = true;
+        TimeDelay(light);
+    }
+
+    private async void TimeDelay(Light light)
+    {
+        await Task.Delay(_timeDelay);
+        light.enabled = false;
     }
 }

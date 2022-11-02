@@ -1,6 +1,6 @@
-using UnityEngine;
 
-public class SnareDrum : MonoBehaviour
+
+public class SnareDrum : Drum
 {
    
 }
