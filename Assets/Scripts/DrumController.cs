@@ -14,16 +14,19 @@ public class DrumController
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+      //  if (Input.GetMouseButtonDown(0))
+      if(Input.touchCount > 0)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out _hit))
+            for (int i = 0; i < Input.touchCount; i++)
             {
-                if (_hit.transform.GetComponent<Drum>())
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                if (Physics.Raycast(ray, out _hit))
                 {
-                    ChooseDrum(_hit.transform.GetComponent<Drum>());
+                    if (_hit.transform.GetComponent<Drum>())
+                    {
+                        ChooseDrum(_hit.transform.GetComponent<Drum>());
+                    }
                 }
-
             }
         }
     }
