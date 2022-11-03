@@ -7,10 +7,12 @@ public class LightController
     private LightsSet _lightsSet;
     private RaycastHit _hit;
     private int _timeDelay = 200;
+    private DrumController _drumController;
 
-    public LightController(LightsSet lightsSet)
+    public LightController(LightsSet lightsSet, DrumController drumController)
     {
         _lightsSet = lightsSet;
+        _drumController = drumController;
     }
 
     public void Update()
@@ -22,6 +24,7 @@ public class LightController
             {
                 if (_hit.transform.GetComponent<Drum>())
                 {
+
                     ChooseDrum(_hit.transform.GetComponent<Drum>());
                 }
 

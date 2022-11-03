@@ -28,7 +28,7 @@ public class DrumController
         }
     }
 
-    private void ChooseDrum(Drum drum)
+    public void ChooseDrum(Drum drum)
     {
             switch (drum)
             {

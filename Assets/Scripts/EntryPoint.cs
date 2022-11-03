@@ -18,7 +18,7 @@ public class EntryPoint : MonoBehaviour
         
         _drumController = new DrumController(_drumsSoundsView, _audioSource);
 
-        _lightController = new LightController(_lightsSet);
+        _lightController = new LightController(_lightsSet, _drumController);
     }
 
     private void Update()
