@@ -1,34 +1,49 @@
 using UnityEngine;
 
-public class DrumController
+
+public class DrumController 
 {
-    private RaycastHit _hit;
+    private RaycastHit[] _hit;
     private AudioSource _audioSource;
     private DrumsSoundsLibrary _drumsSoundsLibrary;
+    private Touch _touch;
 
-    public DrumController(DrumsSoundsLibrary drumsSoundsLibrary, AudioSource audioSource)
+      public DrumController(DrumsSoundsLibrary drumsSoundsLibrary, AudioSource audioSource)
     {
+        
         _drumsSoundsLibrary = drumsSoundsLibrary;
         _audioSource = audioSource;
+
+#if UNITY_EDITOR
+        _hit = new RaycastHit[5];
+#endif
+
+//#if UNITY_ANDROID
+//        _hit = new RaycastHit[(int)_touch.maximumPossiblePressure];
+//#endif
+
     }
 
     public void Update()
     {
       //  if (Input.GetMouseButtonDown(0))
       if(Input.touchCount > 0)
-        {
+      {
             for (int i = 0; i < Input.touchCount; i++)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
-                if (Physics.Raycast(ray, out _hit))
+                if (Input.GetTouch(i).phase == TouchPhase.Began)
                 {
-                    if (_hit.transform.GetComponent<Drum>())
+                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                    if (Physics.Raycast(ray, out _hit[i]))
                     {
-                        ChooseDrum(_hit.transform.GetComponent<Drum>());
+                        if (_hit[i].transform.GetComponent<Drum>())
+                        {
+                            ChooseDrum(_hit[i].transform.GetComponent<Drum>());
+                        }
                     }
                 }
             }
-        }
+      }
     }
 
     public void ChooseDrum(Drum drum)
