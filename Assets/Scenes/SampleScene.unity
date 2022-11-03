@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: c8126b34c980be646893dd0424f07615, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 8452090f391ec204992f38dcdd2c01dd, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: fb61aabd238f3af46b253eb3afc91708, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f8ea127b2978c5f4f98f1cfd540cc7c9, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -416,7 +416,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 33.91
   m_Range: 6.81
-  m_SpotAngle: 39
+  m_SpotAngle: 44
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -655,7 +655,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1626,7 +1626,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1695,7 +1695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129586859}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -22.02, y: 17.97, z: 6.1}
+  m_LocalPosition: {x: -22.02, y: 17.97, z: 4.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2454,7 +2454,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2547,7 +2547,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.7169812, g: 0.41618204, b: 0.31384832, a: 1}
-  m_Intensity: 9.67
+  m_Intensity: 9.42
   m_Range: 60.98
   m_SpotAngle: 60.3
   m_InnerSpotAngle: 21.80208
@@ -2556,10 +2556,10 @@ Light:
     m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.258
+    m_Bias: 0
+    m_NormalBias: 0.5
+    m_NearPlane: 2.31
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2819,7 +2819,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3286,7 +3286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322473602473003621, guid: 732e609389e261c43b5535cbc7387262, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.94031006
       objectReference: {fileID: 0}
     - target: {fileID: 1322473602473003621, guid: 732e609389e261c43b5535cbc7387262, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3294,7 +3294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322473602473003621, guid: 732e609389e261c43b5535cbc7387262, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.34031907
       objectReference: {fileID: 0}
     - target: {fileID: 1322473602473003621, guid: 732e609389e261c43b5535cbc7387262, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3306,7 +3306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322473602473003621, guid: 732e609389e261c43b5535cbc7387262, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 39.793
       objectReference: {fileID: 0}
     - target: {fileID: 1322473602473003621, guid: 732e609389e261c43b5535cbc7387262, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
