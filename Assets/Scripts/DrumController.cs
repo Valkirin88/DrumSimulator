@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class DrumController 
 {
     private RaycastHit[] _hit;
@@ -9,7 +8,7 @@ public class DrumController
     private Touch _touch;
 
       public DrumController(DrumsSoundsLibrary drumsSoundsLibrary, AudioSource audioSource)
-    {
+      {
         
         _drumsSoundsLibrary = drumsSoundsLibrary;
         _audioSource = audioSource;
@@ -22,7 +21,7 @@ public class DrumController
 //        _hit = new RaycastHit[(int)_touch.maximumPossiblePressure];
 //#endif
 
-    }
+      }
 
     public void Update()
     {
@@ -46,7 +45,7 @@ public class DrumController
       }
     }
 
-    public void ChooseDrum(Drum drum)
+    private void ChooseDrum(Drum drum)
     {
             switch (drum)
             {

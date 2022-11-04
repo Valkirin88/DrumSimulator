@@ -5,7 +5,7 @@ public class LightController
 {
     private LightsSet _lightsSet;
     private RaycastHit[] _hit;
-    private int _timeDelay = 200;
+    private int _timeDelay = 100;
     private DrumController _drumController;
 
     public LightController(LightsSet lightsSet, DrumController drumController)
@@ -20,17 +20,23 @@ public class LightController
         // if (Input.GetMouseButtonDown(0))
         if (Input.touchCount > 0)
         {
-            for (int i = 0; i < Input.touchCount; i++)
+            if (Input.touchCount > 0)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
-                if (Physics.Raycast(ray, out _hit[i]))
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    if (_hit[i].transform.GetComponent<Drum>())
+                    if (Input.GetTouch(i).phase == TouchPhase.Began)
                     {
-                        ChooseDrum(_hit[i].transform.GetComponent<Drum>());
+                        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                        if (Physics.Raycast(ray, out _hit[i]))
+                        {
+                            if (_hit[i].transform.GetComponent<Drum>())
+                            {
+                                ChooseDrum(_hit[i].transform.GetComponent<Drum>());
+                            }
+                        }
                     }
-                }    
-            } 
+                }
+            }
         }
     }
 
