@@ -16,6 +16,9 @@ public class DrumController
 #if UNITY_EDITOR
         _hit = new RaycastHit[5];
 #endif
+#if UNITY_ANDROID
+       _hit = new RaycastHit[5];
+#endif
 
 //#if UNITY_ANDROID
 //        _hit = new RaycastHit[(int)_touch.maximumPossiblePressure];
