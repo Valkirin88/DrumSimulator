@@ -7,24 +7,25 @@ public class EntryPoint : MonoBehaviour
     [SerializeField]
     private LightsSet _lightsSet;
 
+    private InputManager _inputManager;
     private AudioSource _audioSource;
     private DrumController _drumController;
     private LightController _lightController;
 
-
     private void Awake()
     {
+        _inputManager = new InputManager();
+
         _audioSource = _drumsSoundsView.GetComponent<AudioSource>();
         
-        _drumController = new DrumController(_drumsSoundsView, _audioSource);
+        _drumController = new DrumController(_drumsSoundsView, _audioSource, _inputManager);
 
-        _lightController = new LightController(_lightsSet, _drumController);
+        _lightController = new LightController(_lightsSet, _inputManager);
     }
 
     private void Update()
     {
-        _drumController.Update();
-        _lightController.Update();
+        _inputManager.Update();
     }
 
 

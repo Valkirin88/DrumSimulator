@@ -4,41 +4,17 @@ using UnityEngine;
 public class LightController 
 {
     private LightsSet _lightsSet;
-    private RaycastHit[] _hit;
     private int _timeDelay = 100;
-    private DrumController _drumController;
+    private InputManager _inputManager;
+        
 
-    public LightController(LightsSet lightsSet, DrumController drumController)
+    public LightController(LightsSet lightsSet, InputManager inputManager )
     {
+        _inputManager = inputManager;
+        _inputManager.GetDrum += ChooseDrum;
         _lightsSet = lightsSet;
-        _drumController = drumController;
-        _hit = new RaycastHit[5];
     }
 
-    public void Update()
-    {
-        // if (Input.GetMouseButtonDown(0))
-        if (Input.touchCount > 0)
-        {
-            if (Input.touchCount > 0)
-            {
-                for (int i = 0; i < Input.touchCount; i++)
-                {
-                    if (Input.GetTouch(i).phase == TouchPhase.Began)
-                    {
-                        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
-                        if (Physics.Raycast(ray, out _hit[i]))
-                        {
-                            if (_hit[i].transform.GetComponent<Drum>())
-                            {
-                                ChooseDrum(_hit[i].transform.GetComponent<Drum>());
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     private void ChooseDrum(Drum drum)
     {
