@@ -6,6 +6,8 @@ public class EntryPoint : MonoBehaviour
     private DrumsSoundsLibrary _drumsSoundsView;
     [SerializeField]
     private LightsSet _lightsSet;
+    [SerializeField]
+    private HitEffectView _hitEffectView;
 
     private InputManager _inputManager;
     private AudioSource _audioSource;
@@ -21,9 +23,9 @@ public class EntryPoint : MonoBehaviour
         
         _drumController = new DrumController(_drumsSoundsView, _audioSource, _inputManager);
 
-        _lightController = new LightController(_lightsSet, _inputManager);
+       // _lightController = new LightController(_lightsSet, _inputManager);
 
-        _hitEffectManager = new HitEffectManager(_inputManager);
+        _hitEffectManager = new HitEffectManager(_hitEffectView, _inputManager);
     }
 
     private void Update()

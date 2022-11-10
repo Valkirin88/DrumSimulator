@@ -142,7 +142,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 80739154}
-  - component: {fileID: 80739153}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -150,26 +149,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &80739153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80739152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a41b03d6ab0d914a8ed7353acf16faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HighHatLight: {fileID: 107377222}
-  SnareDrumLight: {fileID: 543801527}
-  CrashLight: {fileID: 245159645}
-  RideLight: {fileID: 1299713385}
-  BassDrumLight: {fileID: 370546658}
-  Tom1Light: {fileID: 1844995190}
-  Tom2Light: {fileID: 596378991}
-  Tom3Light: {fileID: 735976807}
 --- !u!4 &80739154
 Transform:
   m_ObjectHideFlags: 0
@@ -291,6 +270,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: daeaf8a3e70f44e40bbe0f1be3b1cdab, type: 3}
   m_PrefabInstance: {fileID: 1414495132}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &194205162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194205164}
+  - component: {fileID: 194205163}
+  m_Layer: 0
+  m_Name: HitEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &194205163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194205162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432d54e7818591c48bc6cbde4675bdc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transperentMaterial: {fileID: 2100000, guid: da7c27d24e984044f89efdd66d91c407, type: 2}
+  _lightMaterial: {fileID: 2100000, guid: 196b3020c90d47f44b63a9664e540b1c, type: 2}
+--- !u!4 &194205164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194205162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.45195347, y: 1.7755842, z: -3.4391518}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &245159644
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &245159645
 Light:
   m_ObjectHideFlags: 0
@@ -2383,7 +2408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _drumsSoundsView: {fileID: 752233153}
-  _lightsSet: {fileID: 80739153}
+  _lightsSet: {fileID: 0}
+  _hitEffectView: {fileID: 194205163}
 --- !u!4 &1525451668
 Transform:
   m_ObjectHideFlags: 0
@@ -3574,7 +3600,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 598685513, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 598685513, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3582,16 +3608,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 598685514, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.135
+      value: 1.124
       objectReference: {fileID: 0}
     - target: {fileID: 598685514, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.035
       objectReference: {fileID: 0}
     - target: {fileID: 598685517, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 598685517, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 196b3020c90d47f44b63a9664e540b1c, type: 2}
+      objectReference: {fileID: 2100000, guid: da7c27d24e984044f89efdd66d91c407, type: 2}
+    - target: {fileID: 598685517, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: da7c27d24e984044f89efdd66d91c407, type: 2}
     - target: {fileID: 5674853743080904102, guid: a716d90c51ca3a84cb699dfd1659fed8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0

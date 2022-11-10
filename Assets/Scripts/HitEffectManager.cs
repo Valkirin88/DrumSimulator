@@ -5,29 +5,28 @@ public class HitEffectManager
 {
     private InputManager _inputManager;
     private int _timeDelay = 100;
+    private HitEffectView _hitEffectView;
+    private Material _material;
+   
 
-    [SerializeField]
-    private Material _transperentMaterial;
-    [SerializeField]
-    private Material _lightMaterial;
-
-    public HitEffectManager(InputManager inputManager)
+    public HitEffectManager(HitEffectView hitEffectView, InputManager inputManager)
     {
+        _hitEffectView = hitEffectView;
         _inputManager = inputManager;
         _inputManager.GetDrum += ChangeDrumMaterial;
     }
 
-    
     private void ChangeDrumMaterial(Drum drum)
     {
-        var material = drum.GetComponent<Renderer>().material;
-        material =  _lightMaterial;
-        TimeDelay(material);
+        _material = drum.GetComponent<MeshRenderer>().material;
+        drum.GetComponent<MeshRenderer>().material = _hitEffectView.LightMaterial;
+        Debug.Log(drum);
+        TimeDelay(drum);
     }
 
-    private async void TimeDelay(Material material)
+    private async void TimeDelay(Drum drum)
     {
         await Task.Delay(_timeDelay);
-        material = _transperentMaterial;
+        drum.GetComponent<MeshRenderer>().material = _hitEffectView.TransperentMaterial;
     }
 }

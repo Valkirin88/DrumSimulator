@@ -52,9 +52,9 @@ public class InputManager
         {
            {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(ray, out _hit[1]))
+                    if (Physics.Raycast(ray, out _hit[0]))
                     {
-                        _drum = _hit[1].transform.GetComponent<Drum>();
+                        _drum = _hit[0].transform.GetComponent<Drum>();
 
                         if (_drum)
                         {
