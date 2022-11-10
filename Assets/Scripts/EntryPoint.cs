@@ -11,6 +11,7 @@ public class EntryPoint : MonoBehaviour
     private AudioSource _audioSource;
     private DrumController _drumController;
     private LightController _lightController;
+    private HitEffectManager _hitEffectManager;
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class EntryPoint : MonoBehaviour
         _drumController = new DrumController(_drumsSoundsView, _audioSource, _inputManager);
 
         _lightController = new LightController(_lightsSet, _inputManager);
+
+        _hitEffectManager = new HitEffectManager(_inputManager);
     }
 
     private void Update()

@@ -10,7 +10,7 @@ public class DrumController
       public DrumController(DrumsSoundsLibrary drumsSoundsLibrary, AudioSource audioSource, InputManager inputManager)
       {
         _inputManager = inputManager;
-        _inputManager.GetDrum = ChooseDrum;
+        _inputManager.GetDrum += ChooseDrum;
         _drumsSoundsLibrary = drumsSoundsLibrary;
         _audioSource = audioSource;
       }
