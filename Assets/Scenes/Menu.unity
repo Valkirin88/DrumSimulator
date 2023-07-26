@@ -789,9 +789,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snareDrumSound: {fileID: 8300000, guid: 6e865cd59d782c34284917539c62498c, type: 3}
   _highHatSound: {fileID: 8300000, guid: 9f606f05be3f91145a9130c2da937b67, type: 3}
-  _tom1Sound: {fileID: 8300000, guid: bd73297dbc4bfab4588a25e953175754, type: 3}
-  _tom2Sound: {fileID: 8300000, guid: 2f79973c2087a9f4d896688f313c06ff, type: 3}
-  _tom3Sound: {fileID: 8300000, guid: 941f3fd633157e44c8b6c16ae2647e85, type: 3}
+  _tom1Sound: {fileID: 8300000, guid: db52057127d3d7c4b8056ef4ca1a92dc, type: 3}
+  _tom2Sound: {fileID: 8300000, guid: fd1daeb762d2e7b4abbd0ca2524e3e32, type: 3}
+  _tom3Sound: {fileID: 8300000, guid: 56329730d3c8c6c48b12463931f1b1c3, type: 3}
   _crashSound: {fileID: 8300000, guid: 9d36066e18ac5ad4a890444bf12f4455, type: 3}
   _bassDrumSound: {fileID: 8300000, guid: b7e0ad4d09553014ebd6ff1ac002c5d1, type: 3}
   _rideSound: {fileID: 8300000, guid: a0d6ae1d6b9a7314089db583a22b05e7, type: 3}
