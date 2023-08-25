@@ -13,46 +13,46 @@ public class InputManager
         _hit = new RaycastHit[5];
     }
 
-    //public void Update()
-    //{
-    //    if (Input.touchCount > 0)
-    //    {
-    //        for (int i = 0; i < Input.touchCount; i++)
-    //        {
-    //            if (Input.GetTouch(i).phase == TouchPhase.Began)
-    //            {
-    //                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
-    //                if (Physics.Raycast(ray, out _hit[i]))
-    //                {
-    //                    _drum = _hit[i].transform.GetComponent<Drum>();
-
-    //                    if (_drum)
-    //                    {
-    //                        GetDrum?.Invoke(_drum);
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
-
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
+            for (int i = 0; i < Input.touchCount; i++)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out _hit[0]))
+                if (Input.GetTouch(i).phase == TouchPhase.Began)
                 {
-                    _drum = _hit[0].transform.GetComponent<Drum>();
-
-                    if (_drum)
+                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                    if (Physics.Raycast(ray, out _hit[i]))
                     {
-                        GetDrum?.Invoke(_drum);
+                        _drum = _hit[i].transform.GetComponent<Drum>();
+
+                        if (_drum)
+                        {
+                            GetDrum?.Invoke(_drum);
+                        }
                     }
                 }
-
             }
         }
     }
+
+    //public void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        {
+    //            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //            if (Physics.Raycast(ray, out _hit[0]))
+    //            {
+    //                _drum = _hit[0].transform.GetComponent<Drum>();
+
+    //                if (_drum)
+    //                {
+    //                    GetDrum?.Invoke(_drum);
+    //                }
+    //            }
+
+    //        }
+    //    }
+    //}
 }
